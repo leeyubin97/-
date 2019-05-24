@@ -1,0 +1,23 @@
+<head>
+    <title> 블로그 </title>
+</head>
+<body>
+    {% if user.is_active %}
+    <p>{{user.username}}님 반갑습니다</p>
+    <p>{{user.nickname}}님 반갑습니다</p>
+    <p><a href="{% url 'logout' %}">logout</a></p>
+    {% else %}
+    <p>You are not logged in</p>
+    <a href="{% url 'login' %}">login</a>
+    <a href="{% url 'accounts:signup' %">signup</a>
+    {% endif %}
+
+    <h1>유빈이블로그입니다!</h1>
+    {% for post in posts.all %}
+    <div class="container">
+        <h2>{{post.title}}</h2>
+        <a href="{% url 'accounts:signup'%}">회원가입</a>
+        <a href="{% url 'login'%}">LOGIN</a>
+    </div>
+    {% endfor %}
+</body>
