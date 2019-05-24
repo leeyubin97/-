@@ -1,3 +1,4 @@
+{% block content %}
 <head>
     <title> 블로그 </title>
 </head>
@@ -9,7 +10,7 @@
     {% else %}
     <p>You are not logged in</p>
     <a href="{% url 'login' %}">login</a>
-    <a href="{% url 'accounts:signup' %">signup</a>
+    <a href="{% url 'accounts:signup' %}">signup</a>
     {% endif %}
 
     <h1>유빈이블로그입니다!</h1>
@@ -21,3 +22,4 @@
     </div>
     {% endfor %}
 </body>
+{% endblock %}
