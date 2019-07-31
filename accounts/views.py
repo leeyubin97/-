@@ -13,7 +13,7 @@ def signup(request):
         print(user.is_valid())
         if userform.is_valid():
             userform.save()
-            return redirect('home')
+            return redirect('main')
     elif request.method =='GET':
         userform = CreateUserForm()
 
